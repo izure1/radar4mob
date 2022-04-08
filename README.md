@@ -59,12 +59,17 @@ import { Area, Mob } from 'radar4mob'
 
 ```html
 <script src="https://cdn.jsdelivr.net/npm/radar4mob@latest/dist/umd/index.min.js"></script>
+<script>
+  const { Area, Mob } = Radar4Mob
+</script>
 ```
 
 ### Browser (esm)
 
 ```html
-<script src="https://cdn.jsdelivr.net/npm/radar4mob@latest/dist/esm/index.min.js"></script>
+<script type="module">
+  import { Area, Mob } from 'https://cdn.jsdelivr.net/npm/radar4mob@latest/dist/esm/index.min.js'
+</script>
 ```
 
 ## API
