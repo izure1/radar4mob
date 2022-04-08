@@ -82,7 +82,7 @@ Create a new mobility object. You can use `mob.id` property for `getMob` or `rem
 
 #### *getMob(id: `string`)*: `Mob|null`
 
-Get a added mobility object from area instance. If object not exists, It will be returns `null`.
+Get a added mobility object from area instance. If object not exists, It will return `null`.
 
 #### *removeMob(id: `string`)*: `boolean`
 
@@ -94,7 +94,7 @@ When this function is called, an 'in', 'out' event emits according to the coordi
 
 #### *destroy()*: `void`
 
-Destroys all mobs. It will be calls garbage collect.
+Destroy all mobs. It will call garbage collector.
 
 ### `Mob`
 
@@ -121,4 +121,4 @@ mob.position.x = 10
 
 #### *destroy()*: `void`
 
-Destroy a mob instance. A area instance will drops mob instance too.
+Destroy a mob instance. A area instance will drop mob instance too.
