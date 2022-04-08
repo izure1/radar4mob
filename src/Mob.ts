@@ -38,6 +38,9 @@ export class Mob extends TypedEmitter<MobEvent> {
     this.area.dirties.add(this)
   }
 
+  /**
+   * It is same as `area.removeMob(mob.id)`
+   */
   destroy(): void {
     this.neighbors.clear()
     this.area.dirties.delete(this)
