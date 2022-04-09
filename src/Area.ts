@@ -26,7 +26,7 @@ export class Area {
    * @param id Mobility identifier what you want find.
    */
   getMob(id: string): Mob|null {
-    return this.mobs.get(id) ?? null
+    return this.mobs.get(id) || null
   }
 
   /**
