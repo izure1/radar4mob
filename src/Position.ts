@@ -2,7 +2,16 @@ import { Area } from './Area'
 import { Mob } from './Mob'
 
 
-export class Position {
+interface IPosition {
+  x: number
+  y: number
+  z: number
+  w: number
+}
+
+type PositionLike = Partial<IPosition>
+
+export class Position implements IPosition {
   private readonly __area: Area
   private readonly __mob: Mob
   private __x = 0
@@ -59,11 +68,21 @@ export class Position {
     this.__area.dirties.add(this.__mob)
   }
 
-  set(x: number, y = 0, z = 0, w = 0): this {
-    this.x = x
-    this.y = y
-    this.z = z
-    this.w = w
+  set(x: number, y: number, z: number, w: number): this
+  set(x: PositionLike): this
+  set(x: number|PositionLike, y = 0, z = 0, w = 0): this {
+    if (typeof x === 'number') {
+      this.x = x
+      this.y = y
+      this.z = z
+      this.w = w
+    }
+    else {
+      this.x = x.x ?? 0
+      this.y = x.y ?? 0
+      this.z = x.z ?? 0
+      this.w = x.w ?? 0
+    }
     return this
   }
 }
