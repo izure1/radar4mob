@@ -78,10 +78,10 @@ export class Position implements IPosition {
       this.w = w
     }
     else {
-      this.x = x.x ?? 0
-      this.y = x.y ?? 0
-      this.z = x.z ?? 0
-      this.w = x.w ?? 0
+      this.x = x.x ?? this.x
+      this.y = x.y ?? this.y
+      this.z = x.z ?? this.z
+      this.w = x.w ?? this.w
     }
     return this
   }
