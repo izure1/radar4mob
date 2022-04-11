@@ -1,6 +1,6 @@
 {
   "name": "radar4mob",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Detects and emits an event when the position of an mob with coordinates changes.",
   "main": "dist/umd/index.js",
   "module": "dist/esm/index.js",
