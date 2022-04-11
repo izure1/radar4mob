@@ -68,7 +68,7 @@ export class Position implements IPosition {
     this.__area.dirties.add(this.__mob)
   }
 
-  set(x: number, y: number, z: number, w: number): this
+  set(x: number, y?: number, z?: number, w?: number): this
   set(x: PositionLike): this
   set(x: number|PositionLike, y = 0, z = 0, w = 0): this {
     if (typeof x === 'number') {
