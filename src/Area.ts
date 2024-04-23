@@ -56,11 +56,11 @@ export class Area {
         const distance = Position.GetDistance(dirty.position, current.position)
 
         if (isNeighbor && threshold < distance) {
-          dirty.emit('out', current)
+          dirty.emitter.emit('out', current)
           dirty.neighbors.delete(current)
         }
         else if (!isNeighbor && threshold > distance) {
-          dirty.emit('in', current)
+          dirty.emitter.emit('in', current)
           dirty.neighbors.add(current)
         }
       }

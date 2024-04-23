@@ -1,5 +1,8 @@
 # radar4mob
 
+[![](https://data.jsdelivr.com/v1/package/npm/radar4mob/badge)](https://www.jsdelivr.com/package/npm/radar4mob)
+![Node.js workflow](https://github.com/izure1/radar4mob/actions/workflows/node.js.yml/badge.svg)
+
 Detects and emits an event when the position of an mob with coordinates changes.
 
 ```javascript
@@ -16,10 +19,10 @@ class SomeGameObject {
   }
 }
 
-const obj = new SomeGameObject
+const obj = new SomeGameObject()
 
 obj.mob.position.set(x, y, z, w)
-obj.mob
+obj.mob.emitter
   .on('in', (mob) => {
     console.log(`The object ${mob.id} came into your threshold radius.`)
   })
@@ -55,20 +58,11 @@ npm i radar4mob
 import { Area, Mob } from 'radar4mob'
 ```
 
-### Browser (umd)
-
-```html
-<script src="https://cdn.jsdelivr.net/npm/radar4mob@latest/dist/umd/index.min.js"></script>
-<script>
-  const { Area, Mob } = Radar4Mob
-</script>
-```
-
 ### Browser (esm)
 
 ```html
 <script type="module">
-  import { Area, Mob } from 'https://cdn.jsdelivr.net/npm/radar4mob@latest/dist/esm/index.min.js'
+  import { Area, Mob } from 'https://cdn.jsdelivr.net/npm/radar4mob@1.x.x/+esm'
 </script>
 ```
 

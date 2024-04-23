@@ -1,4 +1,5 @@
-import { TypedEmitter } from 'tiny-typed-emitter'
+import EventEmitter from 'eventemitter3'
+import TypedEmitter from 'typed-emitter'
 
 import { Area } from './Area'
 import { Position } from './Position'
@@ -8,18 +9,19 @@ type MobEvent = {
   'out': (mob: Mob) => void
 }
 
-export class Mob extends TypedEmitter<MobEvent> {
+export class Mob {
   readonly id: string
   readonly position: Position
+  readonly emitter: TypedEmitter<MobEvent>
   readonly neighbors = new Set<Mob>()
   private __thresholdRadius: number
   protected readonly area: Area
 
   constructor(id: string, thresholdRadius: number, area: Area) {
-    super()
     this.id = id
     this.area = area
     this.position = new Position(area, this)
+    this.emitter = new EventEmitter() as TypedEmitter<MobEvent>
     this.__thresholdRadius = thresholdRadius
 
     this.__setDirty()
@@ -48,7 +50,7 @@ export class Mob extends TypedEmitter<MobEvent> {
     this.area.mobs.forEach((mob) => {
       const isExists = mob.neighbors.delete(this)
       if (isExists) {
-        mob.emit('out', this)
+        mob.emitter.emit('out', this)
       }
     })
   }
