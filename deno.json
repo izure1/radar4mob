@@ -1,0 +1,24 @@
+{
+  "name": "@izure/radar4mob",
+  "version": "0.0.1",
+  "description": "Detects and emits an event when the position of an mob with coordinates changes.",
+  "author": "izure1 <admin@izure.org>",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/izure1/radar4mob.git"
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "imports": {
+    "eventemitter3": "npm:eventemitter3@~5.0.1"
+  },
+  "publish": {
+    "include": [
+      "LICENSE",
+      "README.md",
+      "src/**/*.ts"
+    ]
+  }
+}
