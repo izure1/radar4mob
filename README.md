@@ -41,7 +41,7 @@ const onSceneDestroy = () => {
 }
 
 // game update
-setInterval(onFrameUpdate, 60 / 1000)
+setInterval(onSceneUpdate, 60 / 1000)
 ```
 
 ## Install
