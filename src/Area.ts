@@ -2,8 +2,8 @@ import { Mob } from './Mob'
 import { Position } from './Position'
 
 export class Area {
-  readonly mobs = new Map<string, Mob>()
-  readonly dirties = new Set<Mob>()
+  readonly mobs: Map<string, Mob> = new Map<string, Mob>()
+  readonly dirties: Set<Mob> = new Set<Mob>()
 
   /**
    * Create a new mobility object. You can use `mob.id` property for `getMob` or `removeMob` method.

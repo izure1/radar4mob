@@ -13,7 +13,7 @@ export class Mob {
   readonly id: string
   readonly position: Position
   readonly emitter: TypedEmitter<MobEvent>
-  readonly neighbors = new Set<Mob>()
+  readonly neighbors: Set<Mob> = new Set<Mob>()
   private __thresholdRadius: number
   protected readonly area: Area
 
